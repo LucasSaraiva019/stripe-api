@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package stripe_api.v1;
+
+option go_package="/pkg";
+
+import "google/api/annotations.proto";
+import "google/api/http.proto";
+
+
+service Stripe {
+    rpc CreateProduct (CreateProductRequest) returns (CreateProductResponse){
+        option (google.api.http) = {
+            post: "/product"
+            body: "*"
+        };
+    }
+};
+
+message CreateProductRequest {
+    string name = 1;
+    string description = 2;
+    bool active = 3;
+}
+
+message CreateProductResponse{
+    int64 id = 1;
+}
