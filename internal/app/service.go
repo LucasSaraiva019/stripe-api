@@ -6,8 +6,8 @@ import (
 )
 
 type MicroserviceServer struct {
-	productService service.ProductService
 	pb.UnimplementedStripeServer
+	productService service.ProductService
 }
 
 func NewMicroservice(

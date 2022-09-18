@@ -7,7 +7,7 @@ import (
 )
 
 type ProductService interface {
-	CreateProduct(product *dto.Product) (*int64, error)
+	CreateProduct(product *dto.Product) (*string, error)
 }
 
 type productService struct {
@@ -18,7 +18,7 @@ func NewProductService(dao repository.DAO) ProductService {
 	return &productService{dao: dao}
 }
 
-func (p *productService) CreateProduct(product *dto.Product) (*int64, error) {
+func (p *productService) CreateProduct(product *dto.Product) (*string, error) {
 	productInfo := datastruct.Product{
 		ID:          product.ID,
 		Name:        product.Name,

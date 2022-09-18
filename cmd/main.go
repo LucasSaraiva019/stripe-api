@@ -62,5 +62,5 @@ func main() {
 		log.Println("cannot register this service")
 	}
 	log.Printf("server HTTP listening at 127.0.0.1:8080")
-	log.Fatalln(http.ListenAndServe(":1323", mux))
+	log.Fatalln(http.ListenAndServe(":8080", mux))
 }
